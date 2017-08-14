@@ -1,8 +1,8 @@
 /*
 file:   VentanaToken.sol
-ver:    0.0.10
+ver:    0.1.0
 author: Darryl Morris
-date:   8-Aug-2017
+date:   14-Aug-2017
 email:  o0ragman0o AT gmail.com
 (c) Darryl Morris 2017
 
@@ -17,12 +17,9 @@ See MIT Licence for further details.
 
 Release Notes
 -------------
-0.0.10
-* remove `constant` from FUND_WALLET declaration as assigning `msg.sender` is
-not compile time constant.
-* redeclared FUND_WALLET to `address public fundWallet`
-* `fundSucceeded()` returns true on `etherRaised >= MIN_ETH_FUND` instead of
-waiting for `END_DATE`
+0.1.0
+* Release version
+* updated owner, fundWallet, USD_PER_ETH, and START_DATE to final values in VentanaTokenConfig
 
 
 */
@@ -45,11 +42,11 @@ contract VentanaTokenConfig
 
     // Owner has power to abort, discount addresses, sweep successful funds,
     // change owner, sweep alien tokens.
-    address public          owner           = 0xF4b087Ad256ABC5BE11E0433B15Ed012c8AEC8B4; // veredictumPrimary
+    address public          owner           = 0xF4b087Ad256ABC5BE11E0433B15Ed012c8AEC8B4; // veredictumPrimary address checksummed
     
     // Fund wallet should also be audited prior to deployment
     // NOTE: Must be checksummed address!
-    address public          fundWallet      = 0xd6514387236595e080B97c8ead1cBF12f9a6Ab65; // multiSig
+    address public          fundWallet      = 0xd6514387236595e080B97c8ead1cBF12f9a6Ab65; // multiSig address checksummed
 
     // Tokens awarded per USD contributed
     uint public constant    TOKENS_PER_USD  = 3;
@@ -69,8 +66,8 @@ contract VentanaTokenConfig
     uint public constant    MAX_TOKENS      = 300000000;
     
     // Funding begins on 14th August 2017
-    // `+ new Date('14 August 2017 GMT+0')/1000`
-    uint public constant    START_DATE      = 1502668800;
+    // `+ new Date('19:00 14 August 2017')/1000`
+    uint public constant    START_DATE      = 1502701200; // Mon Aug 14 2017 19:00:00 GMT+1000 (AEST)
 
     // Period for fundraising
     uint public constant    FUNDING_PERIOD  = 28 days;
