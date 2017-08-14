@@ -45,17 +45,17 @@ contract VentanaTokenConfig
 
     // Owner has power to abort, discount addresses, sweep successful funds,
     // change owner, sweep alien tokens.
-    address public          owner           = msg.sender;
+    address public          owner           = 0xF4b087Ad256ABC5BE11E0433B15Ed012c8AEC8B4; // veredictumPrimary
     
     // Fund wallet should also be audited prior to deployment
     // NOTE: Must be checksummed address!
-    address public          fundWallet      = 0x0;
+    address public          fundWallet      = 0xd6514387236595e080B97c8ead1cBF12f9a6Ab65; // multiSig
 
     // Tokens awarded per USD contributed
     uint public constant    TOKENS_PER_USD  = 3;
 
     // Ether market price in USD
-    uint public constant    USD_PER_ETH     = 200;
+    uint public constant    USD_PER_ETH     = 258; // calculated from 60 day moving average as at 14th August 2017
     
     // Minimum and maximum target in USD
     uint public constant    MIN_USD_FUND    = 2000000;  // $2m
